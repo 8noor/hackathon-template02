@@ -1,9 +1,26 @@
-import React from 'react'
+"use client";
+import React from "react";
+import Home from "./products/page";
+import Hero from "./components/Hero";
+import Touch from "./components/Touch";
+import Brand from "./components/Brand";
 
-const page = () => {
+import Benefit from "./components/Banefit";
+import FeaturedCategories from "./components/FeaturedCategories";
+
+export default function page() {
   return (
-    <div>Anum Ather</div>
-  )
-}
+    <div>
+      <Hero />
+      <Brand />
 
-export default page
+      <Home />
+      <FeaturedCategories />
+
+      <Benefit />
+
+      <Touch />
+      {/* <Page/> */}
+    </div>
+  );
+}

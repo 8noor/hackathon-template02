@@ -5,6 +5,8 @@ export const product = defineType({
     title: "Product",
     type: "document",
     fields: [
+
+    
         defineField({
             name:"category",
             title:"Category",
@@ -12,6 +14,16 @@ export const product = defineType({
             to:[{
                 type:"category"
             }]
+        }
+        ),
+
+        defineField({
+            name:"productName",
+            title:"product Name",
+         
+            validation: (rule) => rule.required(),
+                type:"string"
+            
         }
         ),
         defineField({
@@ -24,7 +36,11 @@ export const product = defineType({
             name: "slug",
             title: "Slug",
             validation: (rule) => rule.required(),
-            type: "slug"
+            type: "slug",
+            options: {
+                source: "productName"
+            }
+
         }),
         defineField({
             name: "image",
